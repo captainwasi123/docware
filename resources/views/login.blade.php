@@ -11,11 +11,11 @@
 		<link rel="icon" href="favicon.ico" type="image/x-icon">
 		
 		<!-- Toggles CSS -->
-		<link href="../vendors4/jquery-toggles/css/toggles.css" rel="stylesheet" type="text/css">
-		<link href="../vendors4/jquery-toggles/css/themes/toggles-light.css" rel="stylesheet" type="text/css">
+		<link href="{{URL::to('/public/')}}/vendors4/jquery-toggles/css/toggles.css" rel="stylesheet" type="text/css">
+		<link href="{{URL::to('/public/')}}/vendors4/jquery-toggles/css/themes/toggles-light.css" rel="stylesheet" type="text/css">
 		
 		<!-- Custom CSS -->
-		<link href="dist/css/style.css" rel="stylesheet" type="text/css">
+		<link href="{{URL::to('/public')}}/dist/css/style.css" rel="stylesheet" type="text/css">
 	</head>
 	<body>
 		
@@ -37,7 +37,7 @@
 							<div class="auth-form-wrap pt-xl-0 pt-70">
 								<div class="auth-form w-xl-30 w-lg-55 w-sm-75 w-100">
 									<a class="auth-brand text-center d-block mb-10" href="#">
-										<img src="{{URL::to('/dist/img/Docware-Logo1.png')}}" width="200px">
+										<img src="{{URL::to('public/dist/img/Docware-Logo1.png')}}" width="200px">
 									</a>
 									<form method="post" action="{{ URL::to('/login') }}">
 										{{ csrf_field() }}
@@ -81,26 +81,26 @@
 		<!-- JavaScript -->
 		
 		<!-- jQuery -->
-		<script src="/vendors4/jquery/dist/jquery.min.js"></script>
+		<script src="{{URL::to('/public')}}/vendors4/jquery/dist/jquery.min.js"></script>
 		
 		<!-- Bootstrap Core JavaScript -->
-		<script src="/vendors4/popper.js/dist/umd/popper.min.js"></script>
-		<script src="/vendors4/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script src="{{URL::to('/public')}}/vendors4/popper.js/dist/umd/popper.min.js"></script>
+		<script src="{{URL::to('/public')}}/vendors4/bootstrap/dist/js/bootstrap.min.js"></script>
 		
 		<!-- Slimscroll JavaScript -->
-		<script src="dist/js/jquery.slimscroll.js"></script>
+		<script src="{{URL::to('/public')}}/dist/js/jquery.slimscroll.js"></script>
 	
 		<!-- Fancy Dropdown JS -->
-		<script src="dist/js/dropdown-bootstrap-extended.js"></script>
+		<script src="{{URL::to('/public')}}/dist/js/dropdown-bootstrap-extended.js"></script>
 		
 		<!-- FeatherIcons JavaScript -->
-		<script src="dist/js/feather.min.js"></script>
+		<script src="{{URL::to('/public')}}/dist/js/feather.min.js"></script>
 
 		<!-- Toastr JS -->
-    	<script src="/vendors4/jquery-toast-plugin/dist/jquery.toast.min.js"></script>
+    	<script src="{{URL::to('/')}}/vendors4/jquery-toast-plugin/dist/jquery.toast.min.js"></script>
 		
 		<!-- Init JavaScript -->
-		<script src="dist/js/init.js"></script>
+		<script src="{{URL::to('/public')}}/dist/js/init.js"></script>
 
 	</body>
 </html>

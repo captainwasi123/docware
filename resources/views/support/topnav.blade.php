@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-xl navbar-light fixed-top hk-navbar">
             <a id="navbar_toggle_btn" class="navbar-toggle-btn nav-link-hover" href="javascript:void(0);"><span class="feather-icon"><i data-feather="menu"></i></span></a>
             <a class="navbar-brand font-weight-700" href="{{URL::to('/')}}">
-                <img src="{{URL::to('/dist/img/Docware-Logo.png')}}" width="200px">
+                <img src="{{URL::to('/public/dist/img/Docware-Logo.png')}}" width="200px">
             </a>
             <ul class="navbar-nav hk-navbar-content">
                 <li class="nav-item">
@@ -12,7 +12,7 @@
                         <div class="media">
                             <div class="media-img-wrap">
                                 <div class="avatar">
-                                    <img src="{{ URL::to('/') }}/dist/img/user-placeholder.png" alt="user" class="avatar-img rounded-circle">
+                                    <img src="{{ URL::to('/public') }}/dist/img/user-placeholder.png" alt="user" class="avatar-img rounded-circle">
                                 </div>
                                 <span class="badge badge-success badge-indicator"></span>
                             </div>
