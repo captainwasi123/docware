@@ -153,19 +153,6 @@
     <script src="/vendors4/datatables.net-dt/js/dataTables.dataTables.min.js"></script>
     <script src="/vendors4/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
 
-    @if (session()->has('success'))
-        <script type="text/javascript">
-            $.toast({
-                text: "<i class='jq-toast-icon glyphicon glyphicon-ok'></i><p><strong>Success.! </strong> &nbsp;{{session()->get('success')}}</p>",
-                position: 'top-center',
-                loaderBg:'#7a5449',
-                class: 'jq-has-icon jq-toast-success',
-                hideAfter: 3500, 
-                stack: 6,
-                showHideTransition: 'fade'
-            });
-        </script>
-    @endif
     <script type="text/javascript">
         $(document).ready(function() {
             "use strict";

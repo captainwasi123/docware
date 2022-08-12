@@ -248,17 +248,4 @@
         
     </script>
 
-    @if (session()->has('success'))
-        <script type="text/javascript">
-            $.toast({
-                text: "<i class='jq-toast-icon glyphicon glyphicon-ok'></i></i><p><strong>Success.! </strong> &nbsp;{{session()->get('success')}}</p>",
-                position: 'top-center',
-                loaderBg:'#7a5449',
-                class: 'jq-has-icon jq-toast-success',
-                hideAfter: 3500, 
-                stack: 6,
-                showHideTransition: 'fade'
-            });
-        </script>
-    @endif
 @endsection
