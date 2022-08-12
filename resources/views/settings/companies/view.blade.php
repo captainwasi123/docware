@@ -69,7 +69,7 @@
                                                                     <div class="dropdown">
                                                                         <a href="#" aria-expanded="false" data-toggle="dropdown" class="btn btn-link dropdown-toggle btn-icon-dropdown"><span class="feather-icon"><i data-feather="server"></i></span> <span class="caret"></span></a>
                                                                         <div role="menu" class="dropdown-menu">
-                                                                            <a class="dropdown-item" href="{{URL::to('/')}}/settings/license/edit/{{ base64_encode($data->id) }}"><i class="fa fa-edit"></i>&nbsp;Edit</a>            
+                                                                            <a class="dropdown-item" href="{{route('settings.companies.edit', base64_encode($data->id)) }}"><i class="fa fa-edit"></i>&nbsp;Edit</a>            
                                                                             <div class="dropdown-divider"></div>
                                                                             <a class="dropdown-item tst2" data-id="{{ base64_encode($data->id) }}" href="#"><i class="fa fa-trash"></i>&nbsp;&nbsp;Delete</a>
                                                                         </div>
@@ -159,7 +159,7 @@
                 $("body").removeAttr('class');
                 $.toast({
                     heading: 'Are you sure you want to delete this License?',
-                    text: '<i class="jq-toast-icon ti-alert"></i><a href="{{ URL::to("/")}}/settings/license/delete/'+del_data+'" class="btn btn-primary btn-sm">&nbsp;&nbsp;&nbsp;&nbsp;Yes&nbsp;&nbsp;&nbsp;&nbsp;</a>',
+                    text: '<i class="jq-toast-icon ti-alert"></i><a href="{{ URL::to("/")}}/settings/companies/delete/'+del_data+'" class="btn btn-primary btn-sm">&nbsp;&nbsp;&nbsp;&nbsp;Yes&nbsp;&nbsp;&nbsp;&nbsp;</a>',
                     position: 'top-center',
                     loaderBg:'#7a5449',
                     class: 'jq-has-icon jq-toast-warning',

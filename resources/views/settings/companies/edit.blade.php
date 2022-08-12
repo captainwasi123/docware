@@ -38,8 +38,8 @@
 	                                    		&nbsp;
 	                                    	</div>
 	                                        <div class="col-md-8">
-		                                    	<form method="post" action="{{ URL::to('/settings/license/update')}}">
-		                                    		{{ csrf_field() }}
+		                                    	<form method="post" action="{{route('settings.companies.update')}}">
+		                                    		@csrf
                                                     <input type="hidden" name="license_id" value="{{ base64_encode($data['id']) }}">
 		                                        	<div class="row">
                                                         <div class="col-md-4">
@@ -79,7 +79,7 @@
                                                         <div class="col-md-12 right_side">
                                                             <span class="label_span"><br></span>
                                                             <button type="submit" class="btn btn-primary">&nbsp;&nbsp;Update&nbsp;&nbsp;</button>&nbsp;
-                                                            <a href="{{URL::to('/settings/license')}}" class="btn btn-default">Cancel</a>
+                                                            <a href="{{route('settings.companies')}}" class="btn btn-default">Cancel</a>
                                                         </div>
                                                     </div>
 		                                        	<div class="row">

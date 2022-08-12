@@ -140,13 +140,13 @@ use Illuminate\Support\Facades\Route;
                 /* Shipping License */
                     Route::prefix('companies')->group(function(){
 
-                        Route::get('/', 'settingController@viewCompanies');
+                        Route::get('/', 'settingController@viewCompanies')->name('settings.companies');
                         Route::get('add', 'settingController@addCompany')->name('settings.companies.add');
-                        Route::get('delete/{id}', 'settingController@deleteCompany');
-                        Route::get('edit/{id}', 'settingController@editCompany');
+                        Route::get('delete/{id}', 'settingController@deleteCompany')->name('settings.companies.delete');
+                        Route::get('edit/{id}', 'settingController@editCompany')->name('settings.companies.edit');
 
                         Route::post('insert', 'settingController@insertCompany')->name('settings.companies.insert');
-                        Route::post('update', 'settingController@updateCompany');
+                        Route::post('update', 'settingController@updateCompany')->name('settings.companies.update');
                     });
             });
 

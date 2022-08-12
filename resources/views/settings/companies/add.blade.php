@@ -78,7 +78,7 @@
                                                         <div class="col-md-12 right_side">
                                                             <span class="label_span"><br></span>
                                                             <button type="submit" class="btn btn-primary">&nbsp;&nbsp;Save&nbsp;&nbsp;</button>&nbsp;
-                                                            <a href="{{URL::to('/settings/license')}}" class="btn btn-default">Cancel</a>
+                                                            <a href="{{route('settings.companies')}}" class="btn btn-default">Cancel</a>
                                                         </div>
                                                     </div>
 		                                        	<div class="row">
