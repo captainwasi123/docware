@@ -23,19 +23,6 @@ use Illuminate\Support\Facades\Route;
 
         Route::get('/', 'authController@dashboardView');
         
-        Route::prefix('users')->group(function(){
-
-            Route::get('/', 'authController@users');
-            Route::get('Add', 'authController@addUser');
-            Route::get('delete/{id}', 'authController@deleteUser');
-            Route::get('edit/{id}', 'authController@editUser');
-            Route::get('inactive/{id}', 'authController@inactiveUser');
-            Route::get('active/{id}', 'authController@activeUser');
-
-            Route::post('insert', 'authController@insertUser');
-            Route::post('update', 'authController@updateUser');
-        });
-
 
         /* Database Routes */
 
@@ -149,5 +136,20 @@ use Illuminate\Support\Facades\Route;
                         Route::post('update', 'settingController@updateCompany')->name('settings.companies.update');
                     });
             });
+
+
+        // Users Route
+        Route::prefix('users')->group(function(){
+
+            Route::get('/', 'authController@users');
+            Route::get('Add', 'authController@addUser');
+            Route::get('delete/{id}', 'authController@deleteUser');
+            Route::get('edit/{id}', 'authController@editUser');
+            Route::get('inactive/{id}', 'authController@inactiveUser');
+            Route::get('active/{id}', 'authController@activeUser');
+
+            Route::post('insert', 'authController@insertUser');
+            Route::post('update', 'authController@updateUser');
+        });
 
     });
