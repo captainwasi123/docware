@@ -42,62 +42,79 @@ use Illuminate\Support\Facades\Route;
             Route::prefix('database')->group(function(){
 
                 /* Country */
-                    Route::get('country', 'databaseController@viewCountry');
-                    Route::get('country/add', 'databaseController@addCountry');
-                    Route::get('country/delete/{id}', 'databaseController@deleteCountry');
-                    Route::get('country/edit/{id}', 'databaseController@editCountry');
+                    Route::prefix('country')->group(function(){
+                        Route::get('/', 'databaseController@viewCountry');
+                        Route::get('add', 'databaseController@addCountry');
+                        Route::get('delete/{id}', 'databaseController@deleteCountry');
+                        Route::get('edit/{id}', 'databaseController@editCountry');
 
-                    Route::post('country/insert', 'databaseController@insertCountry');
-                    Route::post('country/update', 'databaseController@updateCountry');
+                        Route::post('insert', 'databaseController@insertCountry');
+                        Route::post('update', 'databaseController@updateCountry');
+                    });
 
                 /* City */
-                    Route::get('city', 'databaseController@viewCity');
-                    Route::get('city/add', 'databaseController@addCity');
-                    Route::get('city/delete/{id}', 'databaseController@deleteCity');
-                    Route::get('/database/city/edit/{id}', 'databaseController@editCity');
+                    Route::prefix('city')->group(function(){
 
-                    Route::post('city/insert', 'databaseController@insertcity');
-                    Route::post('city/update', 'databaseController@updatecity');
+                        Route::get('/', 'databaseController@viewCity');
+                        Route::get('add', 'databaseController@addCity');
+                        Route::get('delete/{id}', 'databaseController@deleteCity');
+                        Route::get('edit/{id}', 'databaseController@editCity');
+
+                        Route::post('insert', 'databaseController@insertcity');
+                        Route::post('update', 'databaseController@updatecity');
+                    });
 
 
                 /* Foreign Agent */
-                    Route::get('foreignAgent', 'databaseController@viewForeignAgent');
-                    Route::get('foreignAgent/add', 'databaseController@addForeignAgent');
-                    Route::get('foreignAgent/delete/{id}', 'databaseController@deleteForeignAgent');
-                    Route::get('foreignAgent/edit/{id}', 'databaseController@editForeignAgent');
+                    Route::prefix('foreignAgent')->group(function(){
 
-                    Route::post('foreignAgent/insert', 'databaseController@insertForeignAgent');
-                    Route::post('foreignAgent/update', 'databaseController@updateForeignAgent');
+                        Route::get('/', 'databaseController@viewForeignAgent');
+                        Route::get('add', 'databaseController@addForeignAgent');
+                        Route::get('delete/{id}', 'databaseController@deleteForeignAgent');
+                        Route::get('edit/{id}', 'databaseController@editForeignAgent');
+
+                        Route::post('insert', 'databaseController@insertForeignAgent');
+                        Route::post('update', 'databaseController@updateForeignAgent');
+                    });
 
 
                 /* Importer */
-                    Route::get('importer', 'databaseController@viewImporter');
-                    Route::get('importer/add', 'databaseController@addImporter');
-                    Route::get('importer/delete/{id}', 'databaseController@deleteImporter');
-                    Route::get('importer/edit/{id}', 'databaseController@editImporter');
+                    Route::prefix('importer')->group(function(){
 
-                    Route::post('importer/insert', 'databaseController@insertImporter');
-                    Route::post('importer/update', 'databaseController@updateImporter');
+                        Route::get('/', 'databaseController@viewImporter');
+                        Route::get('add', 'databaseController@addImporter');
+                        Route::get('delete/{id}', 'databaseController@deleteImporter');
+                        Route::get('edit/{id}', 'databaseController@editImporter');
+
+                        Route::post('insert', 'databaseController@insertImporter');
+                        Route::post('update', 'databaseController@updateImporter');
+                    });
 
 
                 /* Sale Person */
-                    Route::get('saleperson', 'databaseController@viewSalePerson');
-                    Route::get('saleperson/add', 'databaseController@addSalePerson');
-                    Route::get('saleperson/delete/{id}', 'databaseController@deleteSalePerson');
-                    Route::get('saleperson/edit/{id}', 'databaseController@editSalePerson');
+                    Route::prefix('saleperson')->group(function(){
 
-                    Route::post('saleperson/insert', 'databaseController@insertSalePerson');
-                    Route::post('saleperson/update', 'databaseController@updateSalePerson');
+                        Route::get('/', 'databaseController@viewSalePerson');
+                        Route::get('add', 'databaseController@addSalePerson');
+                        Route::get('delete/{id}', 'databaseController@deleteSalePerson');
+                        Route::get('edit/{id}', 'databaseController@editSalePerson');
+
+                        Route::post('insert', 'databaseController@insertSalePerson');
+                        Route::post('update', 'databaseController@updateSalePerson');
+                    });
 
 
                 /* Terminal */
-                    Route::get('terminal', 'databaseController@viewTerminal');
-                    Route::get('terminal/add', 'databaseController@addTerminal');
-                    Route::get('terminal/delete/{id}', 'databaseController@deleteTerminal');
-                    Route::get('terminal/edit/{id}', 'databaseController@editTerminal');
+                    Route::prefix('terminal')->group(function(){
 
-                    Route::post('terminal/insert', 'databaseController@insertTerminal');
-                    Route::post('terminal/update', 'databaseController@updateTerminal');
+                        Route::get('/', 'databaseController@viewTerminal');
+                        Route::get('add', 'databaseController@addTerminal');
+                        Route::get('delete/{id}', 'databaseController@deleteTerminal');
+                        Route::get('edit/{id}', 'databaseController@editTerminal');
+
+                        Route::post('insert', 'databaseController@insertTerminal');
+                        Route::post('update', 'databaseController@updateTerminal');
+                    });
             });
 
 
@@ -124,11 +141,11 @@ use Illuminate\Support\Facades\Route;
                     Route::prefix('companies')->group(function(){
 
                         Route::get('/', 'settingController@viewCompanies');
-                        Route::get('add', 'settingController@addCompany');
+                        Route::get('add', 'settingController@addCompany')->name('settings.companies.add');
                         Route::get('delete/{id}', 'settingController@deleteCompany');
                         Route::get('edit/{id}', 'settingController@editCompany');
 
-                        Route::post('insert', 'settingController@insertCompany');
+                        Route::post('insert', 'settingController@insertCompany')->name('settings.companies.insert');
                         Route::post('update', 'settingController@updateCompany');
                     });
             });

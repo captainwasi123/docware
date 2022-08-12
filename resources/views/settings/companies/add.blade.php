@@ -38,8 +38,8 @@
 	                                    		&nbsp;
 	                                    	</div>
 	                                        <div class="col-md-8">
-		                                    	<form method="post" action="{{ URL::to('/settings/license/insert')}}">
-		                                    		{{ csrf_field() }}
+		                                    	<form method="post" action="{{route('settings.companies.insert')}}">
+		                                    		@csrf
 		                                        	<div class="row">
                                                         <div class="col-md-4">
                                                             <span class="label_span">License Code</span><span class="required_span">*</span>

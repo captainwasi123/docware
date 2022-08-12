@@ -13,7 +13,7 @@
                 <div class="hk-pg-header">
                     <h4 class="hk-pg-title"><span class="pg-title-icon"><i class="icon-people"></i></span>Shipping License list</h4>
                     <div class="right_side">
-                    	<a href="{{ URL::to('/settings/license/add') }}" class="btn btn-primary"><i class="icon-user-follow"></i>&nbsp;Add License</a>
+                    	<a href="{{route('settings.companies.add')}}" class="btn btn-primary"><i class="icon-user-follow"></i>&nbsp;Add License</a>
                     </div>
                 </div>
                 <!-- /Title -->
@@ -54,40 +54,35 @@
                                                     </tr>
                                                 </tfoot>
                                                 <tbody>
-                                                	@php
-                                                		$s=1;
-                                                	@endphp
                                                 	@foreach($databelt as $key => $data)
-                                                    <tr>
-                                                        <th scope="row">{{$s}}</th>
-                                                        <td>{{$data->code}}</td>
-                                                        <td>{{$data->name}}</td>
-                                                        <td>{{$data->phone}}</td>
-                                                        <td>{{$data->fax}}</td>
-                                                        <td>{{$data->email}}</td>
-                                                        <td>
-                                                            @if(isset($data->user->username))
-                                                                {{$data->user->username}}
-                                                            @endif
-                                                        </td>
-                                                        <td>{{date("d-M-Y", strtotime($data['created_at']))}}</td>
-														<td>
-                                                            <div class="btn-group">
-                                                                <div class="dropdown">
-                                                                    <a href="#" aria-expanded="false" data-toggle="dropdown" class="btn btn-link dropdown-toggle btn-icon-dropdown"><span class="feather-icon"><i data-feather="server"></i></span> <span class="caret"></span></a>
-                                                                    <div role="menu" class="dropdown-menu">
-                                                                        <a class="dropdown-item" href="{{URL::to('/')}}/settings/license/edit/{{ base64_encode($data->id) }}"><i class="fa fa-edit"></i>&nbsp;Edit</a>            
-                                                                        <div class="dropdown-divider"></div>
-                                                                        <a class="dropdown-item tst2" data-id="{{ base64_encode($data->id) }}" href="#"><i class="fa fa-trash"></i>&nbsp;&nbsp;Delete</a>
+                                                        <tr>
+                                                            <th scope="row">{{++$key}}</th>
+                                                            <td>{{$data->code}}</td>
+                                                            <td>{{$data->name}}</td>
+                                                            <td>{{$data->phone}}</td>
+                                                            <td>{{$data->fax}}</td>
+                                                            <td>{{$data->email}}</td>
+                                                            <td>{{$data->user->username}}</td>
+                                                            <td>{{date("d-M-Y", strtotime($data['created_at']))}}</td>
+    														<td>
+                                                                <div class="btn-group">
+                                                                    <div class="dropdown">
+                                                                        <a href="#" aria-expanded="false" data-toggle="dropdown" class="btn btn-link dropdown-toggle btn-icon-dropdown"><span class="feather-icon"><i data-feather="server"></i></span> <span class="caret"></span></a>
+                                                                        <div role="menu" class="dropdown-menu">
+                                                                            <a class="dropdown-item" href="{{URL::to('/')}}/settings/license/edit/{{ base64_encode($data->id) }}"><i class="fa fa-edit"></i>&nbsp;Edit</a>            
+                                                                            <div class="dropdown-divider"></div>
+                                                                            <a class="dropdown-item tst2" data-id="{{ base64_encode($data->id) }}" href="#"><i class="fa fa-trash"></i>&nbsp;&nbsp;Delete</a>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
-                                                            </div>
-														</td>
-                                                    </tr>
-                                                    @php
-                                                    	$s++;
-                                                    @endphp
+    														</td>
+                                                        </tr>
                                                     @endforeach
+                                                    @if(count($databelt) == 0)
+                                                        <tr>
+                                                            <td colspan="9">No Record Found.</td>
+                                                        </tr>
+                                                    @endif
                                                 </tbody>
                                             </table>
                                         </div>
