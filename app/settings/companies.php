@@ -11,7 +11,7 @@ class companies extends Model
     //
     protected $table = 'tbl_companies_info';
 
-    public static function insertlicense(array $data){
+    public static function insertCompany(array $data){
         $license = new companies;
         $license->code          = $data['license_code'];
         $license->name          = strtoupper($data['name']);
@@ -25,7 +25,7 @@ class companies extends Model
         return true;
     }
 
-    public static function updatelicense(array $data){
+    public static function updateCompany(array $data){
         $license = companies::find(base64_decode($data['license_id']));
         $license->code          = $data['license_code'];
         $license->name          = strtoupper($data['name']);
