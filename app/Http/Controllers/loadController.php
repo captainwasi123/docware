@@ -3,12 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\database\countries;
-use App\database\cities;
-use App\database\importer;
-use App\database\saleperson;
-use App\database\foreignAgent;
-use App\database\terminal;
+use App\Models\database\countries;
+use App\Models\database\cities;
+use App\Models\database\importer;
+use App\Models\database\saleperson;
+use App\Models\database\foreignAgent;
+use App\Models\database\terminal;
 use Auth;
 
 class loadController extends Controller

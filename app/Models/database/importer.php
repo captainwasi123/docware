@@ -1,11 +1,11 @@
 <?php
 
-namespace App\database;
+namespace App\Models\database;
 
 use Illuminate\Database\Eloquent\Model;
 use Auth;
-use App\database\importer_custType;
-use App\database\cities;
+use App\Models\database\importer_custType;
+use App\Models\database\cities;
 use App\User;
 
 class importer extends Model

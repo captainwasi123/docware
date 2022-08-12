@@ -4,13 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
-use App\database\countries;
-use App\database\cities;
-use App\database\foreignAgent;
-use App\database\importer;
-use App\database\importer_custType;
-use App\database\salePerson;
-use App\database\terminal;
+use App\Models\database\countries;
+use App\Models\database\cities;
+use App\Models\database\foreignAgent;
+use App\Models\database\importer;
+use App\Models\database\importer_custType;
+use App\Models\database\salePerson;
+use App\Models\database\terminal;
 use DB;
 
 class databaseController extends Controller

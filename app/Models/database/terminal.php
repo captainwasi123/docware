@@ -1,10 +1,10 @@
 <?php
 
-namespace App\database;
+namespace App\Models\database;
 
 use Illuminate\Database\Eloquent\Model;
 use App\User;
-use App\database\cities;
+use App\Models\database\cities;
 use Auth;
 
 class terminal extends Model
