@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="host" content="{{URL::to('/')}}">
-    <title>@yield('title') | eLogistic</title>
+    <title>@yield('title') | {{env('APP_NAME')}}</title>
     <meta name="description" content="A responsive bootstrap 4 admin dashboard template by hencework" />
 
     @include('support.style')
